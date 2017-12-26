@@ -1,7 +1,7 @@
 # 補完機能
 autoload -U compinit; compinit
 
-PROMPT="%F{cyan}%n:%F{green}local%f$ %f"
+PROMPT="%F{cyan}%~:%F{green}%f$ %f"
 
 # コマンド履歴
 HISTFILE=~/.zsh_history
