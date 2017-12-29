@@ -39,13 +39,6 @@ set statusline+=%F
 set statusline+=%=
 set statusline+=[LOW=%l/%L]
 
-" Solarized
-syntax enable
-set background=dark
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termcolors=256
-colorscheme solarized
 
 "dein Scripts-----------------------------
 if &compatible
@@ -53,20 +46,22 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/matsune/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/matsune')
-  call dein#begin('/Users/matsune')
+if dein#load_state('~/.vim/dein')
+  call dein#begin('~/.vim/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/matsune/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('altercation/vim-colors-solarized')
+
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -118,3 +113,12 @@ nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
+" Solarized
+syntax enable
+set background=dark
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+let g:solarized_termcolors=256
+colorscheme solarized
+
+let g:go_version_warning = 0
