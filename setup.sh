@@ -1,5 +1,4 @@
 #!/bin/bash
-
 export RED="\e[31m"
 export GREEN="\e[32m"
 export YELLOW="\e[33m"
@@ -20,7 +19,9 @@ function load() {
 	fi
 }
 
-TOOLS=$(find . -type d | grep ./ | cut -c 3-)
+script_dir=$(cd $(dirname $BASH_SOURCE); pwd)
+cd $script_dir
+TOOLS=$(find ./* -type d | cut -c 3-)
 for TOOL in $TOOLS; do
 	load $TOOL
 done
