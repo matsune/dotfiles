@@ -11,6 +11,6 @@ if [ -e $HOME/.vimrc ] ; then
 fi
 
 echo ">>Download .vimrc"
-wget -O $HOME/.vimrc --no-verbose $BASE_URL/.vimrc
+wget -O $HOME/.vimrc --no-verbose $BASE_URL/vim/.vimrc
 
 
