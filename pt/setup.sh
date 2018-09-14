@@ -1,6 +1,8 @@
 #!/bin/sh
 
 if [ ! `which pt` ]; then
-  sudo wget -O /usr/local/bin/pt --no-verbose $BASE_URL/pt/pt
+  echo "Download pt ..."
+  sudo wget -O /usr/local/bin/pt $BASE_URL/pt/pt
+  sudo chmod +x /usr/local/bin/pt
 fi
 
