@@ -10,7 +10,7 @@ targets:
     tags:
   # vim
   - name: vimrc
-    file: ./.vim/.vimrc
+    file: ./vim/.vimrc
     dst: ~/.vimrc
   # tmux
   - name: tmux
