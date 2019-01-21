@@ -1,0 +1,20 @@
+targets:
+  # zsh
+  - name: zshrc
+    file: ./zsh/.zshrc
+    dst: ~/.zshrc
+    tags:
+  - name: zprofile
+    file: ./zsh/.zprofile
+    dst: ~/.zprofile
+    tags:
+  # vim
+  - name: vimrc
+    file: ./.vim/.vimrc
+    dst: ~/.vimrc
+  # tmux
+  - name: tmux
+    file: ./tmux/.tmux.conf
+    dst: ~/.tmux.conf
+
+sub:
