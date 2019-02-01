@@ -61,6 +61,7 @@ if dein#load_state('$HOME/.cache/dein')
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('Shougo/vimshell')
   call dein#add('nazo/pt.vim')
+  call dein#add('fatih/vim-go')
 
   " Required:
   call dein#end()
