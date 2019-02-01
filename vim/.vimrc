@@ -118,3 +118,11 @@ let g:solarized_termcolors=256
 colorscheme solarized
 
 let g:go_version_warning = 0
+
+" NERDTree
+let g:NERDTreeNodeDelimiter = "\u00a0"
+let NERDTreeShowHidden=1
+
+
+let g:go_fmt_command = "goimports"
+

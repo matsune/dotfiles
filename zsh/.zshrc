@@ -1,3 +1,4 @@
+# zsh
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 autoload -U compinit; compinit
@@ -27,5 +28,34 @@ SAVEHIST=6000000
 setopt hist_ignore_dups
 setopt share_history
 
+# peco
+
+function peco-history-selection() {
+  BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+  CURSOR=$#BUFFER
+  zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
+function pv () {
+  if [ -z $@ ]; then
+    echo "no search keyword: pv [KEYWORD]"
+  else
+    PT_RES=$(pt $@)
+    if [ ! -z $PT_RES ]; then
+      PECO_RES=$(echo $PT_RES| peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+      if [ ! -z $PECO_RES ]; then
+        eval "vim $PECO_RES"
+      fi
+    fi
+  fi
+}
+
+# go
+[[ -s ~/.gvm/scripts/gvm ]] && source ~/.gvm/scripts/gvm
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export GO111MODULE=on
+
