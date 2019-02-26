@@ -59,3 +59,5 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export GO111MODULE=on
 
+# rust
+[ -f ~/.cargo/env ] && source $HOME/.cargo/env
