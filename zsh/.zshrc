@@ -83,5 +83,3 @@ if [ -x "$(command -v lsd)" ]; then
   alias lt='ls --tree'
 fi
 
-[ -f ./.zsh_custom ] && source ./.zsh_custom
-
