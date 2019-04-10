@@ -39,6 +39,7 @@ set statusline+=%F
 set statusline+=%=
 set statusline+=[LOW=%l/%L]
 
+set foldlevel=99
 
 "dein Scripts-----------------------------
 if &compatible
@@ -46,22 +47,30 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('$HOME/.cache/dein')
-  call dein#begin('$HOME/.cache/dein')
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  call dein#add('scrooloose/nerdtree')
+  "call dein#add('scrooloose/nerdtree')
+  call dein#add('justinmk/vim-dirvish')
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('Shougo/vimshell')
+  call dein#add('airblade/vim-gitgutter')
   call dein#add('nazo/pt.vim')
   call dein#add('fatih/vim-go')
+  call dein#add('SirVer/ultisnips')
+  call dein#add('AndrewRadev/splitjoin.vim')
+  call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('racer-rust/vim-racer')
+  call dein#add('rust-lang/rust.vim')
+  
 
   " Required:
   call dein#end()
@@ -80,8 +89,10 @@ endif
 
 "End dein Scripts-------------------------
 
-" NERDTree key mapping
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" NERDTree
+"nnoremap <silent><C-e> :NERDTreeToggle<CR>
+"let g:NERDTreeNodeDelimiter = "\u00a0"
+"let NERDTreeShowHidden=1
 
 nnoremap s <Nop>
 nnoremap sj <C-w>j
@@ -113,17 +124,23 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 " Solarized
 syntax enable
 set background=dark
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termcolors=256
+let g:solarized_termcolors=16
 colorscheme solarized
 
-let g:go_version_warning = 0
 
-" NERDTree
-let g:NERDTreeNodeDelimiter = "\u00a0"
-let NERDTreeShowHidden=1
-
-
+" vim-go
+set autowrite
 let g:go_fmt_command = "goimports"
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+let g:go_auto_type_info = 1
+set updatetime=100
+
+au FileType go setlocal foldmethod=syntax
+
+" rust
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = '~/.cargo/bin/rustfmt'
+let g:racer_cmd = '~/.cargo/bin/racer'
+let g:racer_experimental_completer = 1
+
 
