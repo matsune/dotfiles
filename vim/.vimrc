@@ -1,5 +1,6 @@
 " setting
 set fenc=utf-8
+set encoding=utf-8
 set nobackup
 set noswapfile
 set autoread
@@ -58,7 +59,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  "call dein#add('scrooloose/nerdtree')
+  call dein#add('scrooloose/nerdtree')
   call dein#add('justinmk/vim-dirvish')
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('Shougo/vimshell')
@@ -90,9 +91,7 @@ endif
 "End dein Scripts-------------------------
 
 " NERDTree
-"nnoremap <silent><C-e> :NERDTreeToggle<CR>
-"let g:NERDTreeNodeDelimiter = "\u00a0"
-"let NERDTreeShowHidden=1
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 nnoremap s <Nop>
 nnoremap sj <C-w>j
@@ -142,5 +141,4 @@ let g:rustfmt_autosave = 1
 let g:rustfmt_command = '~/.cargo/bin/rustfmt'
 let g:racer_cmd = '~/.cargo/bin/racer'
 let g:racer_experimental_completer = 1
-
 
