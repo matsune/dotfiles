@@ -31,6 +31,9 @@ SAVEHIST=6000000
 setopt hist_ignore_dups
 setopt share_history
 
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+
 # peco
 
 function peco-history-selection() {
@@ -83,3 +86,6 @@ if [ -x "$(command -v lsd)" ]; then
   alias lt='ls --tree'
 fi
 
+if [ -x "$(command -v nvim)" ]; then
+  alias v='nvim'
+fi
