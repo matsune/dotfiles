@@ -41,6 +41,8 @@ set statusline+=%=
 set statusline+=[LOW=%l/%L]
 
 set foldlevel=99
+set backspace=indent,eol,start
+
 
 "dein Scripts-----------------------------
 if &compatible
