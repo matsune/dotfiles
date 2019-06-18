@@ -80,7 +80,17 @@ export RUST_SRC_PATH='$(echo ~/.multirust/toolchains/*/lib/rustlib/src/rust/src)
 if [ -d "$HOME/.nvm" ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  # for brew
+  . "$(brew --prefix nvm)/nvm.sh"
 fi
+
+# pyenv
+export PYENV_ROOT=${HOME}/.pyenv
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+fi
+
     
 # aliases
 
