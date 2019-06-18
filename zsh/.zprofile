@@ -1,7 +1,5 @@
 source ~/.zplug/init.zsh
 
-zplug "wbinglee/zsh-wakatime"
-
 # syntax
 zplug "chrissicool/zsh-256color"
 zplug "Tarrasch/zsh-colors"

@@ -22,7 +22,6 @@ export GREP_OPTIONS='--color=auto'
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-#PROMPT="[%m]%F{cyan}%~:%F{green}%f$ %f"
 PROMPT="%F{cyan}%~:%F{green}%f$ %f"
 
 HISTFILE=~/.zsh_history
@@ -31,8 +30,16 @@ SAVEHIST=6000000
 setopt hist_ignore_dups
 setopt share_history
 
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
+# vcs_info
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+RPROMPT='${vcs_info_msg_0_}'
 
 # peco
 
@@ -53,7 +60,7 @@ function pv () {
     if [ ! -z $PT_RES ]; then
       PECO_RES=$(echo $PT_RES| peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
       if [ ! -z $PECO_RES ]; then
-        eval "vim $PECO_RES"
+        eval "v $PECO_RES"
       fi
     fi
   fi
@@ -81,11 +88,24 @@ alias tailf='tail -f'
 
 if [ -x "$(command -v lsd)" ]; then
   alias ls='lsd'
-  alias ll='ls -l'
-  alias la='ls -la'
+  alias ll='ls -lF'
+  alias la='ls -laF'
   alias lt='ls --tree'
 fi
 
+
+# vim
+export XDG_CONFIG_HOME=$HOME/.config
 if [ -x "$(command -v nvim)" ]; then
-  alias v='nvim'
+	alias v='nvim'
 fi
+
+# tmux
+if [ ! -e ~/.tmux/plugins ]; then
+  mkdir -p .tmux/plugins
+fi
+
+if [ ! -e ~/.tmux/plugins/tpm ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
