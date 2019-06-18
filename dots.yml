@@ -3,18 +3,23 @@ targets:
   - name: zshrc
     file: ./zsh/.zshrc
     dst: ~/.zshrc
-    tags:
+    tags: 
+      - zsh
   - name: zprofile
     file: ./zsh/.zprofile
     dst: ~/.zprofile
     tags:
+      - zsh
   # vim
   - name: vimrc
     file: ./vim/.vimrc
     dst: ~/.vimrc
+    tags:
+      - vim
   # tmux
   - name: tmux
     file: ./tmux/.tmux.conf
     dst: ~/.tmux.conf
-
+    tags:
+      - tmux
 sub:
