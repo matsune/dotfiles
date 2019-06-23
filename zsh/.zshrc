@@ -105,7 +105,7 @@ fi
 # vim
 export XDG_CONFIG_HOME=$HOME/.config
 if [ -x "$(command -v nvim)" ]; then
-	alias vv='nvim'
+	alias n='nvim'
 fi
 
 # tmux
