@@ -17,10 +17,6 @@ zplug "zsh-users/zsh-completions"
 zplug "chrissicool/zsh-256color"
 zplug "Tarrasch/zsh-colors"
 
-# tools
-zplug "marzocchi/zsh-notify"
-zplug "oknowton/zsh-dwim"
-
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
@@ -29,14 +25,15 @@ if ! zplug check --verbose; then
   fi
 fi
 
-if [[ -d ~/.zplug/repos/sorin-ionescu/prezto ]]; then # already installed prezto
-  if [[ ! -L "${ZDOTDIR:-$HOME}/.zprezto" ]]; then # not linked to ~/.zprezto
-    ln -s ~/.zplug/repos/sorin-ionescu/prezto ~/.zprezto
+ZDOTDIR="${ZPLUG_HOME}/repos/sorin-ionescu/prezto"
+if [[ -d "${ZDOTDIR}" ]]; then # already installed prezto
+  if [[ ! -L ~/.zprezto ]]; then # not linked to ~/.zprezto
+    ln -s "${ZDOTDIR}" ~/.zprezto
   fi
 fi
 
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+if [[ -s "${ZDOTDIR}/init.zsh" ]]; then
+  source "${ZDOTDIR}/init.zsh"
   zstyle ':prezto:load' pmodule \
   'terminal' \
   'history' \
@@ -50,3 +47,4 @@ fi
 zplug load
 
 prompt powerline
+source .zlogin
