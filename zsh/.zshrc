@@ -25,7 +25,7 @@ if ! zplug check --verbose; then
   fi
 fi
 
-ZDOTDIR="${ZPLUG_HOME}/repos/sorin-ionescu/prezto"
+ZDOTDIR="${ZPLUG_REPOS}/sorin-ionescu/prezto"
 if [[ -d "${ZDOTDIR}" ]]; then # already installed prezto
   if [[ ! -L ~/.zprezto ]]; then # not linked to ~/.zprezto
     ln -s "${ZDOTDIR}" ~/.zprezto
