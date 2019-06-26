@@ -46,5 +46,5 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-prompt powerline
-source .zlogin
+prompt agnoster
+source ~/.zlogin
