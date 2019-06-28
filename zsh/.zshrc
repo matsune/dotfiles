@@ -1,6 +1,3 @@
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # prompt
@@ -25,6 +22,7 @@ if ! zplug check --verbose; then
   fi
 fi
 
+
 ZDOTDIR="${ZPLUG_REPOS}/sorin-ionescu/prezto"
 if [[ -d "${ZDOTDIR}" ]]; then # already installed prezto
   if [[ ! -L ~/.zprezto ]]; then # not linked to ~/.zprezto
@@ -47,7 +45,5 @@ fi
 zplug load
 
 prompt agnoster
-bindkey -e 
-bindkey '^R' peco-history-selection
 
 source ~/.zlogin

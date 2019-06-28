@@ -29,6 +29,11 @@ SAVEHIST=6000000
 setopt hist_ignore_dups
 setopt share_history
 
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+bindkey -e 
+
 # peco
 
 function peco-history-selection() {
@@ -37,6 +42,7 @@ function peco-history-selection() {
   zle reset-prompt
 }
 
+bindkey '^R' peco-history-selection
 zle -N peco-history-selection
 
 function pv () {
