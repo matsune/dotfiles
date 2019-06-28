@@ -48,5 +48,6 @@ zplug load
 
 prompt agnoster
 bindkey -e 
+bindkey '^R' peco-history-selection
 
 source ~/.zlogin
