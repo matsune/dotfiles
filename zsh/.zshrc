@@ -47,4 +47,6 @@ fi
 zplug load
 
 prompt agnoster
+bindkey -e 
+
 source ~/.zlogin
