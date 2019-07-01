@@ -21,6 +21,8 @@ export GREP_OPTIONS='--color=auto'
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
+PROMPT="%F{cyan}%~:%F{green}%f$ %f"
+
 export LC_ALL=en_US.UTF-8
 
 HISTFILE=~/.zsh_history

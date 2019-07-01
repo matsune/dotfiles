@@ -3,7 +3,6 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # prompt
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
-zplug "sorin-ionescu/prezto"
 
 # syntax
 zplug "zsh-users/zsh-syntax-highlighting"
@@ -22,28 +21,8 @@ if ! zplug check --verbose; then
   fi
 fi
 
-
-ZDOTDIR="${ZPLUG_REPOS}/sorin-ionescu/prezto"
-if [[ -d "${ZDOTDIR}" ]]; then # already installed prezto
-  if [[ ! -L ~/.zprezto ]]; then # not linked to ~/.zprezto
-    ln -s "${ZDOTDIR}" ~/.zprezto
-  fi
-fi
-
-if [[ -s "${ZDOTDIR}/init.zsh" ]]; then
-  source "${ZDOTDIR}/init.zsh"
-  zstyle ':prezto:load' pmodule \
-  'terminal' \
-  'history' \
-  'directory' \
-  'spectrum' \
-  'completion' \
-  'prompt'
-fi
-
 # Then, source plugins and add commands to $PATH
 zplug load
 
-prompt agnoster
-
-source ~/.zlogin
+autoload -U promptinit; promptinit
+prompt pure
