@@ -24,5 +24,5 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-autoload -U promptinit; promptinit
-prompt pure
+#autoload -U promptinit; promptinit
+# prompt pure
