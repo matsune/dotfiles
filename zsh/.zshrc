@@ -1,9 +1,5 @@
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
-# prompt
-zplug "mafredri/zsh-async"
-zplug "sindresorhus/pure"
-
 # syntax
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "ascii-soup/zsh-url-highlighter"
@@ -24,5 +20,7 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-#autoload -U promptinit; promptinit
-# prompt pure
+if ! [ -x "$(command -v starship)" ]; then
+  brew install starship
+fi
+eval "$(starship init zsh)"
