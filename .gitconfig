@@ -1,0 +1,15 @@
+
+[alias]
+  f = fetch
+  fu = fetch upstream
+  p = push
+  puo = push -u origin
+  puu = push -u upstream
+  puom = push -u origin master
+  puum = push -u upstream master
+  puod = push -u origin develop
+  puud = push -u upstream develop
+  s = status
+  b = branch
+  cb = checkout -b
+
