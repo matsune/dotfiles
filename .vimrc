@@ -11,14 +11,17 @@ set showcmd
 set number
 set cursorline
 set virtualedit=onemore
+set vb t_vb=
 set smartindent
-set visualbell
 set showmatch
 set laststatus=2
 set wildmode=list:longest
 set whichwrap=b,s,h,l,<,>,[,],~
 nnoremap j gj
 nnoremap k gk
+
+set term=xterm-256color
+syntax on
 
 " tab
 set shiftwidth=2
