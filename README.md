@@ -1,11 +1,13 @@
 # dotfiles
-## Prerequisite
+## Prerequisites
 1. Add SSH key to GitHub
-2. Install tools
+2. Manual installs
 - zsh
 - vim
 - tmux
 - peco
+
+- [Nerd Fonts](https://www.nerdfonts.com/)
 
 ## Setup
 ```shell
