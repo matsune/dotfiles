@@ -67,3 +67,8 @@ function chpwd() { ls }
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
 
+# 
+# plugins
+#
+source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
