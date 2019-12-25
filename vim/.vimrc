@@ -47,6 +47,7 @@ set foldlevel=99
 set backspace=indent,eol,start
 set mouse=a
 
+" keymap
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -71,7 +72,30 @@ nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
-nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 nnoremap <leader>r :e!<CR>
 map <Enter> o<ESC>
+
+"
+" Vundle
+"
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" customize for NERDTree
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
+
