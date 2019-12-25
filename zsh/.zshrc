@@ -20,6 +20,7 @@ alias tailf='tail -f'
 alias ls="ls -GF"
 alias la='ls -la'
 alias ll='ls -l'
+alias v='vim'
 
 if [ -x "$(command -v lsd)" ]; then
   alias ls='lsd'
