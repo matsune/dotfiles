@@ -17,8 +17,7 @@ set showmatch
 set laststatus=2
 set wildmode=list:longest
 set whichwrap=b,s,h,l,<,>,[,],~
-nnoremap j gj
-nnoremap k gk
+set signcolumn=yes
 
 set term=xterm-256color
 syntax on
@@ -73,5 +72,16 @@ nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap <leader>r :e!<CR>
-map <Enter> o<ESC>
+"map <Enter> o<ESC>
+nnoremap j gj
+nnoremap k gk
+
+au QuickfixCmdPost make,grep,grepadd,vimgrep copen
+
+nnoremap qj  :cnext<Return>
+nnoremap qk  :cprevious<Return>
+nnoremap qq  :cc<Return>
+nnoremap qo  :copen<Return>
+nnoremap qc  :cclose<Return>
+nnoremap q   <Nop>
 

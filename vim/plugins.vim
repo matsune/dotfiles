@@ -16,6 +16,11 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -43,3 +48,14 @@ let g:airline#extensions#whitespace#enabled = 1
 
 " gitgutter
 let g:gitgutter_async = 0
+
+" LSP
+nnoremap <silent><C-]> :LspDefinition<CR>
+"" golang
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+endif
