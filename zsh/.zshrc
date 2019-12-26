@@ -13,6 +13,14 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 PROMPT="%F{cyan}%~:%F{green}%f$ %f"
 
+# VCS
+autoload -Uz vcs_info
+precmd () { vcs_info }
+setopt prompt_subst
+zstyle ':vcs_info:*' formats '%F{48}[%b]%f'
+zstyle ':vcs_info:*' actionformats '%F{126}[%b|%a]%f'
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+
 #
 # aliases
 #
