@@ -18,6 +18,7 @@ set laststatus=2
 set wildmode=list:longest
 set whichwrap=b,s,h,l,<,>,[,],~
 set signcolumn=yes
+set belloff=all
 
 set term=xterm-256color
 syntax on
