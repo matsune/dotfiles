@@ -21,7 +21,7 @@ set signcolumn=yes
 set belloff=all
 
 set term=xterm-256color
-syntax on
+syntax enable
 
 " tab
 set shiftwidth=2
@@ -73,7 +73,7 @@ nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap <leader>r :e!<CR>
-"map <Enter> o<ESC>
+nnoremap ` o<ESC>
 nnoremap j gj
 nnoremap k gk
 
