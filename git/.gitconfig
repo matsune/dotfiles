@@ -1,0 +1,23 @@
+[user]
+	email = yuma.matsune@gmail.com
+	name = Yuma Matsune
+
+[alias]
+  b = branch
+  f = fetch
+  fo = fetch origin
+  fom = fetch origin master
+  fod = fetch origin develop
+  p = push
+  puo = push -u origin
+  puom = push -u origin master
+  puod = push -u origin develop
+  m = merge
+  mom = merge origin/master
+  mod = merge origin/develop
+  c = checkout 
+  cm = checkout master
+  cb = checkout -b
+  cd = checkout develop
+  s = status
+
