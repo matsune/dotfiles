@@ -15,17 +15,17 @@ curl -s https://raw.githubusercontent.com/matsune/dotfiles/master/install.sh | s
 ```
 
 ## Optional
-`~/plugins.vim` and `custom.vim` will also be loaded
+`~/.plugins.vim` and `.custom.vim` will also be loaded
 
 ```sh
-~:$ cat plugins.vim
+~:$ cat .plugins.vim
 Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
 Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 Plugin 'fatih/vim-go'
 
-~:$ cat custom.vim
+~:$ cat .custom.vim
 " LSP
 nnoremap <silent><C-]> :LspDefinition<CR>
 

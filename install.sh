@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eu
 cd $HOME
 git clone --recursive https://github.com/matsune/dotfiles.git
 ln -f -s ./dotfiles/zsh/.zshrc ~/.zshrc 
