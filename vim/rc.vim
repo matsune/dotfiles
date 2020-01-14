@@ -17,9 +17,7 @@ set showmatch
 set laststatus=2
 set wildmode=list:longest
 set whichwrap=b,s,h,l,<,>,[,],~
-if !has('unix')
-  set signcolumn=yes
-endif
+set signcolumn=yes
 set belloff=all
 
 set term=xterm-256color

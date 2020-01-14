@@ -1,8 +1,8 @@
 # dotfiles
 ## Prerequisites
 - zsh
-- vim
-- tmux
+- vim (>= 8)
+- tmux (>= 2.4)
 - peco
 
 
