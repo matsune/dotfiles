@@ -2,8 +2,8 @@
   editor = vim
 
 [user]
-	email = yuma.matsune@gmail.com
-	name = Yuma Matsune
+  email = yuma.matsune@gmail.com
+  name = Yuma Matsune
 
 [alias]
   b = branch
