@@ -16,6 +16,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'osyo-manga/vim-over'
 
 Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
@@ -32,6 +33,9 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <leader>e :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
+
+" vim-over
+nnoremap <leader>m :OverCommandLine<CR>%s/
 
 " vim-airline
 let g:airline_theme = 'papercolor'
