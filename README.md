@@ -4,6 +4,7 @@
 - vim (>= 8)
 - tmux (>= 2.4)
 - peco
+- tig
 
 for Terminal app
 - [Nerd Fonts](https://www.nerdfonts.com/)
