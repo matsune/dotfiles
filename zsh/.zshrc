@@ -37,6 +37,10 @@ if [ -x "$(command -v lsd)" ]; then
   alias lt='ls --tree'
 fi
 
+if [ -x "$(command -v rg)" ]; then
+  alias rgf='rg --files | rg'
+fi
+
 # peco
 
 function peco-history-selection() {

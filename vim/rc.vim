@@ -84,5 +84,4 @@ nnoremap qk  :cprevious<Return>
 nnoremap qq  :cc<Return>
 nnoremap qo  :copen<Return>
 nnoremap qc  :cclose<Return>
-nnoremap q   <Nop>
 
