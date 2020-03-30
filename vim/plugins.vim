@@ -11,6 +11,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-commentary'
 Plugin 'vim-airline/vim-airline'
