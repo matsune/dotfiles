@@ -56,8 +56,8 @@ nnoremap sh <C-w>h
 nnoremap sn gt
 nnoremap sp gT
 nnoremap s= <C-w>=
-nnoremap sf :<C-u>bn<CR>
-nnoremap sg :<C-u>bp<CR>
+nnoremap s] :<C-u>bn<CR>
+nnoremap s[ :<C-u>bp<CR>
 nnoremap st :<C-u>tabnew<CR>
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
