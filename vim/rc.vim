@@ -21,7 +21,6 @@ set signcolumn=yes
 set belloff=all
 
 set term=xterm-256color
-syntax enable
 
 " tab
 set shiftwidth=2
@@ -38,7 +37,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " statusline
 set statusline=2
-set statusline=%y\ 
+set statusline=%y\
 set statusline+=%F
 set statusline+=%=
 set statusline+=[LOW=%l/%L]
@@ -73,3 +72,7 @@ nnoremap qq  :cc<Return>
 nnoremap qo  :copen<Return>
 nnoremap qc  :cclose<Return>
 
+let _curfile=expand("%:r")
+if _curfile == 'Makefile'
+  set noexpandtab
+endif

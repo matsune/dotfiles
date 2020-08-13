@@ -85,3 +85,8 @@ zstyle ':completion:*:manuals' separate-sections true
 #
 source ~/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=36'
+
+if [ -x "$(command -v rbenv)" ]; then
+  eval "$(rbenv init -)"
+fi
+
