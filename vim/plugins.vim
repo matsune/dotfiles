@@ -57,6 +57,8 @@ let g:airline#extensions#whitespace#enabled = 1
 
 " gitgutter
 let g:gitgutter_async = 0
+highlight clear SignColumn
+
 
 " LSP
 nnoremap <silent><C-]> :LspDefinition<CR>

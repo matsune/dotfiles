@@ -1,2 +1,3 @@
 set main-options = --exclude=refs/stash --all
+set main-view = id date author commit-title:graph=yes,refs=yes
 

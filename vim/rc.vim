@@ -21,6 +21,7 @@ set signcolumn=yes
 set belloff=all
 
 set term=xterm-256color
+syntax on
 
 " tab
 set shiftwidth=2
