@@ -29,6 +29,7 @@ alias ls="ls -GF"
 alias la='ls -la'
 alias ll='ls -l'
 alias v='vim'
+alias ox='open `ls | grep xcworkspace`'
 
 if [ -x "$(command -v lsd)" ]; then
   alias ls='lsd'
