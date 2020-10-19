@@ -5,6 +5,9 @@
   email = yuma.matsune@gmail.com
   name = Yuma Matsune
 
+[push]
+  default = current
+
 [alias]
   b = branch
   f = fetch
