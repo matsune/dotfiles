@@ -31,6 +31,10 @@ alias ll='ls -l'
 alias v='vim'
 alias ox='open `ls | grep xcworkspace`'
 
+if [ -x "$(command -v xcodegen)" ]; then
+  alias xx='xcodegen && ox'
+fi
+
 if [ -x "$(command -v lsd)" ]; then
   alias ls='lsd'
   alias ll='ls -lF'
