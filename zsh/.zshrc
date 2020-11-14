@@ -29,7 +29,7 @@ alias ls="ls -GF"
 alias la='ls -la'
 alias ll='ls -l'
 alias v='vim'
-alias ox='open `ls | grep xcworkspace`'
+alias ox='open `ls | grep xcworkspace || ls | grep xcodeproj`'
 
 if [ -x "$(command -v xcodegen)" ]; then
   alias xx='xcodegen && ox'
