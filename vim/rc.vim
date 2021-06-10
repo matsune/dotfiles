@@ -77,3 +77,6 @@ let _curfile=expand("%:r")
 if _curfile == 'Makefile'
   set noexpandtab
 endif
+
+xnoremap p "_dP
+

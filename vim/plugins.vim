@@ -64,7 +64,7 @@ let g:lsp_diagnostics_echo_cursor = 1
 nnoremap <S-o> :Files<CR>
 nnoremap <S-f> :Rg<CR>
 
-"" golang
+" golang
 if executable('gopls')
   let g:go_def_mode='gopls'
   let g:go_info_mode='gopls'

@@ -28,6 +28,7 @@ alias tailf='tail -f'
 alias ls="ls -GF"
 alias la='ls -la'
 alias ll='ls -l'
+alias catn='cat -n'
 alias v='vim'
 alias ox='open `ls | grep xcworkspace || ls | grep xcodeproj`'
 
