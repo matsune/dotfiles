@@ -1,30 +1,22 @@
-"
-" Vundle
-"
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/dotfiles/vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-commentary'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'osyo-manga/vim-over'
-Plugin 'prabirshrestha/async.vim'
-Plugin 'prabirshrestha/vim-lsp'
-Plugin 'prabirshrestha/asyncomplete.vim'
-Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
+Plug 'osyo-manga/vim-over'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 source $HOME/.plugins.vim
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
 " NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
@@ -63,40 +55,3 @@ let g:lsp_diagnostics_echo_cursor = 1
 " fzf
 nnoremap <S-o> :Files<CR>
 nnoremap <S-f> :Rg<CR>
-
-" golang
-if executable('gopls')
-  let g:go_def_mode='gopls'
-  let g:go_info_mode='gopls'
-
-  augroup LspGo
-    au!
-    autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'go-lang',
-          \ 'cmd': {server_info->['gopls']},
-          \ 'whitelist': ['go'],
-          \ })
-    autocmd FileType go setlocal omnifunc=lsp#complete
-  augroup END
-endif
-
-"" rust
-if executable('rls')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
-        \ 'whitelist': ['rust'],
-        \ })
-endif
-
-"" c++
-if executable('ccls')
-   au User lsp_setup call lsp#register_server({
-      \ 'name': 'ccls',
-      \ 'cmd': {server_info->['ccls', '-log-file=/tmp/ccls.log', '-v=1']},
-      \ 'initialization_options': { 'cacheDirectory': '/tmp/ccls' },
-      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-      \ })
-endif
-

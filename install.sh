@@ -21,3 +21,5 @@ ask_override ./dotfiles/vim/.vimrc ~/.vimrc
 ask_override ./dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ask_override ./dotfiles/git/.gitconfig ~/.gitconfig
 ask_override ./dotfiles/tig/.tigrc ~/.tigrc
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
