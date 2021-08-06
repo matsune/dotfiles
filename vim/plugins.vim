@@ -47,7 +47,6 @@ let g:airline#extensions#whitespace#enabled = 1
 let g:gitgutter_async = 0
 highlight clear SignColumn
 
-
 " LSP
 nnoremap <silent><C-]> :LspDefinition<CR>
 let g:lsp_diagnostics_echo_cursor = 1
@@ -55,3 +54,5 @@ let g:lsp_diagnostics_echo_cursor = 1
 " fzf
 nnoremap <S-o> :Files<CR>
 nnoremap <S-f> :Rg<CR>
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.4, 'yoffset': 1, 'border': 'horizontal' } }
+
