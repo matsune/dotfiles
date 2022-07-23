@@ -6,6 +6,7 @@ set noswapfile
 set autoread
 set hidden
 set showcmd
+set clipboard=unnamed
 
 " appearance
 set number
