@@ -54,17 +54,25 @@ fi
 
 # peco
 
-function peco-history-selection() {
-  BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-  CURSOR=$#BUFFER
-  zle reset-prompt
-}
 
-bindkey '^R' peco-history-selection
-zle -N peco-history-selection
+if [ -x "$(command -v peco)" ]; then
+  function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+  }
 
-if [ -x "$(command -v peco)" ] && [ -x "$(command -v ghq)" ]; then
-  alias j='cd `ghq list -p | peco`'
+  bindkey '^R' peco-history-selection
+  zle -N peco-history-selection
+
+  if [ -x "$(command -v ghq)" ]; then
+    function peco-ghq-selection() {
+      cd `ghq list -p | peco`
+      zle reset-prompt
+    }
+    bindkey '^G' peco-ghq-selection
+    zle -N peco-ghq-selection
+  fi
 fi
 
 #
