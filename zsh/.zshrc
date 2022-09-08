@@ -58,6 +58,10 @@ function peco-history-selection() {
 bindkey '^R' peco-history-selection
 zle -N peco-history-selection
 
+if [ -x "$(command -v peco)" ] && [ -x "$(command -v ghq)" ]; then
+  alias j='cd `ghq list -p | peco`'
+fi
+
 #
 # autocomplete
 #
