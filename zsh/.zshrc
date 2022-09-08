@@ -1,5 +1,6 @@
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+export TERM=xterm-256color
 
 HISTFILE=~/.zsh_history
 HISTSIZE=6000000
@@ -21,6 +22,11 @@ zstyle ':vcs_info:*' formats '%F{48}[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{126}[%b|%a]%f'
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
+if [ -x "$(command -v brew)" ]; then
+  eval $(brew shellenv)
+  alias v=vim
+fi
+
 #
 # aliases
 #
@@ -29,7 +35,6 @@ alias ls="ls -GF"
 alias la='ls -la'
 alias ll='ls -l'
 alias catn='cat -n'
-alias v='vim'
 alias ox='open `ls | grep xcworkspace || ls | grep xcodeproj`'
 
 if [ -x "$(command -v xcodegen)" ]; then

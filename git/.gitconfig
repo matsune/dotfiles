@@ -1,9 +1,10 @@
 [core]
   editor = vim
+	excludesfile = /Users/matsune/.gitignore_global
 
 [user]
-  email = yuma.matsune@gmail.com
-  name = Yuma Matsune
+	email = yuma.matsune@gmail.com
+	name = matsune
 
 [push]
   default = current
@@ -34,3 +35,11 @@
 	required = true
 [init]
 	defaultBranch = main
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /private/var/folders/16/cg3qdxf93gz8qr9pdvjddd740000gp/T/AppTranslocation/0D304D0B-4E9B-4309-9F73-E60A4C645D8E/d/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/matsune/.stCommitMsg
