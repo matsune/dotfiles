@@ -67,8 +67,12 @@ if [ -x "$(command -v peco)" ]; then
 
   if [ -x "$(command -v ghq)" ]; then
     function peco-ghq-selection() {
-      cd `ghq list -p | peco`
-      zle reset-prompt
+      local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+      if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+      fi
+      zle clear-screen
     }
     bindkey '^G' peco-ghq-selection
     zle -N peco-ghq-selection
