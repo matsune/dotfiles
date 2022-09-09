@@ -9,6 +9,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
+Plug 'pseewald/vim-anyfold'
 Plug 'airblade/vim-gitgutter'
 Plug 'osyo-manga/vim-over'
 Plug 'vim-airline/vim-airline'
@@ -17,6 +18,11 @@ Plug 'vim-airline/vim-airline-themes'
 source $HOME/.plugins.vim
 
 call plug#end()
+
+" vim-anyfold
+filetype plugin indent on
+syntax on  
+autocmd Filetype * AnyFoldActivate
 
 " NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
@@ -50,6 +56,14 @@ highlight clear SignColumn
 " LSP
 nnoremap <silent><C-]> :LspDefinition<CR>
 let g:lsp_diagnostics_echo_cursor = 1
+
+if executable('rust-analyzer')
+  au User lsp_setup call lsp#register_server({
+        \   'name': 'Rust Language Server',
+        \   'cmd': {server_info->['rust-analyzer']},
+        \   'whitelist': ['rust'],
+        \ })
+endif
 
 " fzf
 nnoremap <S-o> :Files<CR>
