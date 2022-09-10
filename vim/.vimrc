@@ -1,3 +1,3 @@
-" source $HOME/dotfiles/vim/plugins.vim
-" source $HOME/dotfiles/vim/rc.vim
+source $DOTFILES/vim/rc.vim
+source $DOTFILES/vim/plugins.vim
 " source $HOME/.custom.vim

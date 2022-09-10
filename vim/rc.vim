@@ -21,8 +21,6 @@ set whichwrap=b,s,h,l,<,>,[,],~
 set signcolumn=yes
 set belloff=all
 
-syntax on
-
 " tab
 set shiftwidth=2
 set expandtab
@@ -43,9 +41,14 @@ set statusline+=%F
 set statusline+=%=
 set statusline+=[LOW=%l/%L]
 
-set foldlevel=99
 set backspace=indent,eol,start
 set mouse=a
+
+" fold
+set foldmethod=syntax
+set foldlevel=99
+set foldclose=all
+syntax on
 
 " keymap
 nnoremap s <Nop>
@@ -65,7 +68,8 @@ nnoremap sq :<C-u>q<CR>
 nnoremap <leader>r :e!<CR>
 nnoremap ` o<ESC>
 
-au QuickfixCmdPost make,grep,grepadd,vimgrep copen
+
+" au QuickfixCmdPost make,grep,grepadd,vimgrep copen
 
 nnoremap <C-j>  :cnext<Return>
 nnoremap <C-k>  :cprevious<Return>

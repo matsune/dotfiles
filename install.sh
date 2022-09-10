@@ -1,5 +1,6 @@
 #!/bin/bash -eu
-DOTFILES="${DOTFILES:-~/.dotfiles}"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 function ask_override() {
   if [ -f $2 ]; then
@@ -19,14 +20,15 @@ function ask_override() {
 }
 
 [ ! -d $DOTFILES ] && git clone --recursive https://github.com/matsune/dotfiles.git $DOTFILES
-ask_override $DOTFILES/zsh/.zshrc ~/.zshrc
+ask_override $DOTFILES/zsh/.zshrc $HOME/.zshrc
 
 echo "source ${DOTFILES}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export DOTFILES=${DOTFILES}
 " > ~/.zsh_custom
 
-ask_override $DOTFILES/vim/.vimrc ~/.vimrc
-ask_override $DOTFILES/nvim ~/.config/nvim
-ask_override $DOTFILES/tmux/.tmux.conf ~/.tmux.conf
-ask_override $DOTFILES/git/.gitconfig ~/.gitconfig
-ask_override $DOTFILES/tig/.tigrc ~/.tigrc
+ask_override $DOTFILES/vim/.vimrc $HOME/.vimrc
+mkdir -p $XDG_CONFIG_HOME/nvim
+ask_override $DOTFILES/vim/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+ask_override $DOTFILES/tmux/.tmux.conf $HOME/.tmux.conf
+ask_override $DOTFILES/git/.gitconfig $HOME/.gitconfig
+ask_override $DOTFILES/tig/.tigrc $HOME/.tigrc
