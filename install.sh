@@ -1,4 +1,5 @@
 #!/bin/bash -eu
+DOTFILES="${DOTFILES:-~/.dotfiles}"
 
 function ask_override() {
   if [ -f $2 ]; then
@@ -6,20 +7,24 @@ function ask_override() {
       read -p "Do you wish to override $2? [yN] " yn
       case $yn in
           [Yy]* ) ;; 
-          * ) return;;
+          * ) 
+            echo "not override"
+            return;;
       esac
     fi
   fi
-  echo "ln -f -s $1 $2" 
+  echo "override: ln -f -s $1 $2" 
   ln -f -s $1 $2
 }
 
-cd $HOME
-[ ! -d "dotfiles" ] && git clone --recursive https://github.com/matsune/dotfiles.git
-ask_override ./dotfiles/zsh/.zshrc ~/.zshrc 
-ask_override ./dotfiles/vim/.vimrc ~/.vimrc
-ask_override ./dotfiles/tmux/.tmux.conf ~/.tmux.conf
-ask_override ./dotfiles/git/.gitconfig ~/.gitconfig
-ask_override ./dotfiles/tig/.tigrc ~/.tigrc
+[ ! -d $DOTFILES ] && git clone --recursive https://github.com/matsune/dotfiles.git $DOTFILES
+ask_override $DOTFILES/zsh/.zshrc ~/.zshrc 
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo "source ${DOTFILES}/zsh/zsh-autosuggestions/zsh_autosuggestions.zsh" > ~/.zsh_autosuggestions
+
+ask_override $DOTFILES/vim/.vimrc ~/.vimrc
+ask_override $DOTFILES/nvim ~/.config/nvim
+ask_override $DOTFILES/tmux/.tmux.conf ~/.tmux.conf
+ask_override $DOTFILES/git/.gitconfig ~/.gitconfig
+ask_override $DOTFILES/tig/.tigrc ~/.tigrc
+
