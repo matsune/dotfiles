@@ -19,7 +19,7 @@ function ask_override() {
   ln -f -s $1 $2
 }
 
-[ ! -d $DOTFILES ] && git clone --recursive https://github.com/matsune/dotfiles.git $DOTFILES
+[ ! -d $DOTFILES ] && git clone --recursive git@github.com:matsune/dotfiles.git $DOTFILES
 ask_override $DOTFILES/zsh/.zshrc $HOME/.zshrc
 
 echo "source ${DOTFILES}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
