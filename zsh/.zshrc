@@ -110,7 +110,7 @@ zstyle ':completion:*:manuals' separate-sections true
 # 
 # plugins
 #
-source ~/.zsh-autosuggestions
+source ~/.zsh_custom
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=36'
 
 if [ -x "$(command -v rbenv)" ]; then
