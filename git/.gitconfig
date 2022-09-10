@@ -1,37 +1,32 @@
 [core]
-  editor = vim
-	excludesfile = /Users/matsune/.gitignore_global
+editor = vim
+excludesfile = ~/.gitignore_global
 
 [user]
-	email = yuma.matsune@gmail.com
-	name = matsune
+email = yuma.matsune@gmail.com
+name = matsune
 
 [push]
-  default = current
+default = current
 
 [alias]
-  b = branch
-  f = fetch
-  fo = fetch origin
-  fom = fetch origin main
-  fod = fetch origin develop
-  p = push
-  puo = push -u origin
-  puom = push -u origin main
-  puod = push -u origin develop
-  m = merge
-  mom = merge origin/main
-  mod = merge origin/develop
-  c = checkout 
-  cm = checkout main
-  cb = checkout -b
-  cd = checkout develop
-  s = status
+b = branch
+f = fetch
+fo = fetch origin
+fom = fetch origin main
+fod = fetch origin develop
+p = push
+puo = push -u origin
+puom = push -u origin main
+puod = push -u origin develop
+m = merge
+mom = merge origin/main
+mod = merge origin/develop
+c = checkout
+cm = checkout main
+cb = checkout -b
+cd = checkout develop
+s = status
 
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [init]
-	defaultBranch = main
+defaultBranch = main
