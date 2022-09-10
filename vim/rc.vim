@@ -68,9 +68,6 @@ nnoremap sq :<C-u>q<CR>
 nnoremap <leader>r :e!<CR>
 nnoremap ` o<ESC>
 
-
-" au QuickfixCmdPost make,grep,grepadd,vimgrep copen
-
 nnoremap <C-j>  :cnext<Return>
 nnoremap <C-k>  :cprevious<Return>
 

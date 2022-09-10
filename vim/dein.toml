@@ -19,8 +19,20 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
-nnoremap <silent><C-]> :LspDefinition<CR>
-let g:lsp_diagnostics_echo_cursor = 1
+function s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  setlocal signcolumn=yes
+  if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+  nnoremap <buffer> <silent><C-]> <plug>(lsp-definition)
+  nnoremap <buffer> <silent><C-K> <plug>(lsp-hover)
+  let g:lsp_diagnostics_float_cursor = 1
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 '''
 
 [[plugins]]
