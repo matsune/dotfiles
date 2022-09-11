@@ -45,7 +45,6 @@ set backspace=indent,eol,start
 set mouse=a
 
 " fold
-set foldmethod=syntax
 set foldlevel=99
 set foldclose=all
 syntax on
