@@ -87,7 +87,7 @@ nnoremap <leader>m :OverCommandLine<CR>%s/
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
-let g:airline_theme = 'papercolor'
+" let g:airline_theme = 'papercolor'
 let g:airline_powerline_fonts=1
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
@@ -108,3 +108,10 @@ repo = 'vim-airline/vim-airline-themes'
 depends = [
   'vim-airline'
 ]
+
+[[plugins]]
+repo = 'sainnhe/everforest'
+hook_add = '''
+set termguicolors
+colorscheme everforest
+'''
