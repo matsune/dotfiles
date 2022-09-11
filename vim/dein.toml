@@ -45,17 +45,19 @@ depends = [
 
 [[plugins]]
 repo = 'junegunn/fzf'
-hook_add = '''
-nnoremap <S-o> :Files<CR>
-nnoremap <S-f> :Rg<CR>
-let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.4, 'yoffset': 1, 'border': 'horizontal' } }
-'''
+# use Homebrew 
+rtp = '/usr/local/opt/fzf'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = [
   'fzf'
 ]
+hook_add = '''
+nnoremap <S-o> :Files<CR>
+nnoremap <S-f> :Rg<CR>
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.4, 'yoffset': 1, 'border': 'horizontal' } }
+'''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
