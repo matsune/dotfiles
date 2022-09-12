@@ -20,7 +20,6 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
 let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_diagnostics_float_cursor = 1
 
 function s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
@@ -66,6 +65,9 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <leader>e :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
+
+" vim 9 issue https://github.com/preservim/nerdtree/issues/1321
+let g:NERDTreeMinimalMenu=1
 '''
 
 [[plugins]]
@@ -110,8 +112,14 @@ depends = [
 ]
 
 [[plugins]]
-repo = 'sainnhe/everforest'
+repo = 'blakewilliams/numetal.vim'
 hook_add = '''
 set termguicolors
-colorscheme everforest
+set background=dark
+colorscheme numetal
+augroup customize_colors
+  au!
+  autocmd ColorScheme * highlight clear CursorLine
+  autocmd ColorScheme * highlight CursorLine gui=underline cterm=underline
+augroup END
 '''
