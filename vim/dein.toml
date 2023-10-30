@@ -2,21 +2,6 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'prabirshrestha/async.vim'
-
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete.vim'
-
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
-hook_add = '''
-" Tab completion
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-'''
-
-[[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
 let g:lsp_diagnostics_echo_cursor = 1
@@ -41,6 +26,19 @@ repo = 'mattn/vim-lsp-settings'
 depends = [
   'vim-lsp'
 ]
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+hook_add = '''
+" Tab completion
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+'''
+
 
 [[plugins]]
 repo = 'junegunn/fzf'
@@ -123,3 +121,4 @@ augroup customize_colors
   autocmd ColorScheme * highlight CursorLine gui=underline cterm=underline
 augroup END
 '''
+

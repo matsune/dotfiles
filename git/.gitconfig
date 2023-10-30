@@ -23,10 +23,12 @@ m = merge
 mom = merge origin/main
 mod = merge origin/develop
 c = checkout
-cm = checkout main
+cm = checkout master
 cb = checkout -b
 cd = checkout develop
 s = status
 
 [init]
 defaultBranch = main
+[pull]
+	rebase = false
