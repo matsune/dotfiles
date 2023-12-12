@@ -42,8 +42,7 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 [[plugins]]
 repo = 'junegunn/fzf'
-# use Homebrew 
-rtp = '/usr/local/opt/fzf'
+build = './install --all'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
