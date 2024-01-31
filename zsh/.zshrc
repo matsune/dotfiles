@@ -64,6 +64,8 @@ if [ -x "$(command -v fzf)" ]; then
   bindkey '^G' fzf-ghq-selection
 
   alias vf='fzf --print0 | xargs -0 -o vim'
+
+  bindkey '^N' fzf-cd-widget
 fi
 
 
