@@ -74,6 +74,7 @@ let NERDTreeShowHidden=1
 
 " vim 9 issue https://github.com/preservim/nerdtree/issues/1321
 let g:NERDTreeMinimalMenu=1
+let g:NERDTreeNodeDelimiter = "\u00a0"
 '''
 
 [[plugins]]
