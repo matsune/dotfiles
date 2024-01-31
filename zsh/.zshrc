@@ -48,32 +48,24 @@ if [ -x "$(command -v rg)" ]; then
   alias rgf='rg --files | rg'
 fi
 
-# peco
+if [ -x "$(command -v fzf)" ]; then
+  export FZF_DEFAULT_COMMAND='find .'
+  export FZF_DEFAULT_OPTS='--layout=reverse --border'
 
-
-if [ -x "$(command -v peco)" ]; then
-  function peco-history-selection() {
-    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-    CURSOR=$#BUFFER
-    zle reset-prompt
+  function fzf-ghq-selection() {
+    local selected_dir=$(ghq list -p | fzf --query="$LBUFFER" )
+    if [ -n "$selected_dir" ]; then
+      BUFFER="cd ${selected_dir}"
+      zle accept-line
+    fi
+    zle clear-screen
   }
+  zle -N fzf-ghq-selection
+  bindkey '^G' fzf-ghq-selection
 
-  bindkey '^R' peco-history-selection
-  zle -N peco-history-selection
-
-  if [ -x "$(command -v ghq)" ]; then
-    function peco-ghq-selection() {
-      local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-      if [ -n "$selected_dir" ]; then
-        BUFFER="cd ${selected_dir}"
-        zle accept-line
-      fi
-      zle clear-screen
-    }
-    bindkey '^G' peco-ghq-selection
-    zle -N peco-ghq-selection
-  fi
+  alias vf='fzf --print0 | xargs -0 -o vim'
 fi
+
 
 #
 # autocomplete

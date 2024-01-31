@@ -21,4 +21,3 @@ curl -s https://raw.githubusercontent.com/matsune/dotfiles/master/install.sh | D
 - [dein.vim](https://github.com/Shougo/dein.vim)
 - [fzf](https://github.com/junegunn/fzf)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [peco](https://github.com/peco/peco)
