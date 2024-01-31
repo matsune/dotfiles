@@ -3,7 +3,9 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
+rev = "v0.1.4"
 hook_add = '''
+let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 
 function s:on_lsp_buffer_enabled() abort
@@ -23,15 +25,15 @@ augroup END
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
-depends = [
-  'vim-lsp'
-]
+depends = ['vim-lsp']
+rev = "v0.0.1"
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
+rev = "v2.1.0"
 hook_add = '''
 " Tab completion
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -39,9 +41,15 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 '''
 
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
 
 [[plugins]]
 repo = 'junegunn/fzf'
+rev = "0.46.0"
 build = './install --all'
 
 [[plugins]]
@@ -57,6 +65,7 @@ let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.4, 'yoffset': 1, 'borde
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+rev = "7.1.1"
 hook_add = '''
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
@@ -69,6 +78,7 @@ let g:NERDTreeMinimalMenu=1
 
 [[plugins]]
 repo = 'tpope/vim-commentary'
+rev = "v1.3"
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
@@ -85,8 +95,9 @@ nnoremap <leader>m :OverCommandLine<CR>%s/
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+rev = "v0.11"
 hook_add = '''
-" let g:airline_theme = 'papercolor'
+let g:airline_theme = 'papercolor'
 let g:airline_powerline_fonts=1
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
@@ -95,9 +106,6 @@ let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'y', 'z']]
 let g:airline_section_c = '%t'
 let g:airline_section_x = '%{&filetype}'
-let g:airline_section_z = '%3l:%2v %{airline#extensions#lsp#get_warning()} %{airline#extensions#lsp#get_error()}'
-let g:airline#extensions#ale#error_symbol = ' '
-let g:airline#extensions#ale#warning_symbol = ' '
 let g:airline#extensions#default#section_truncate_width = {}
 let g:airline#extensions#whitespace#enabled = 1
 '''
@@ -120,4 +128,3 @@ augroup customize_colors
   autocmd ColorScheme * highlight CursorLine gui=underline cterm=underline
 augroup END
 '''
-

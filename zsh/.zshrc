@@ -26,22 +26,16 @@ RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
 if [ -x "$(command -v brew)" ]; then
   eval $(brew shellenv)
-  alias v=vim
 fi
 
 #
 # aliases
 #
-alias tailf='tail -f'
 alias ls="ls -GF"
 alias la='ls -la'
 alias ll='ls -l'
-alias catn='cat -n'
 alias ox='open `ls | grep xcworkspace || ls | grep xcodeproj`'
-
-if [ -x "$(command -v xcodegen)" ]; then
-  alias xx='xcodegen && ox'
-fi
+alias v=vim
 
 if [ -x "$(command -v lsd)" ]; then
   alias ls='lsd'
@@ -114,8 +108,4 @@ zstyle ':completion:*:manuals' separate-sections true
 #
 source ~/.zsh_custom
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=36'
-
-if [ -x "$(command -v rbenv)" ]; then
-  eval "$(rbenv init -)"
-fi
 
