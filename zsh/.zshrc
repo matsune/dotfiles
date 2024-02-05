@@ -63,8 +63,7 @@ if [ -x "$(command -v fzf)" ]; then
   zle -N fzf-ghq-selection
   bindkey '^G' fzf-ghq-selection
 
-  alias vf='fzf --print0 | xargs -0 -o vim'
-
+  bindkey -s '^F' 'fzf --print0 | xargs -0 -o vim\n'
   bindkey '^N' fzf-cd-widget
 fi
 
@@ -103,3 +102,5 @@ zstyle ':completion:*:manuals' separate-sections true
 source ~/.zsh_custom
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=36'
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
