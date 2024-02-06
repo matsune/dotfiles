@@ -8,8 +8,8 @@ if [ -z "${DOTFILES}" ]; then
     exit 1
 fi
 
-AUTO_SUGGESTIONS_LINE="source \${DOTFILES}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 DOTFILES_LINE="export DOTFILES=${DOTFILES}"
+AUTO_SUGGESTIONS_LINE="source \${DOTFILES}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 if [ -f "${ZSH_CUSTOM_FILE}" ]; then
   # if already zsh_custom exists
@@ -26,8 +26,8 @@ if [ -f "${ZSH_CUSTOM_FILE}" ]; then
     sed -i '' "s|source .*/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh|${AUTO_SUGGESTIONS_LINE}|g" "${ZSH_CUSTOM_FILE}"
   fi
 else
-  echo "${AUTO_SUGGESTIONS_LINE}" > "${ZSH_CUSTOM_FILE}"
   echo "${DOTFILES_LINE}" >> "${ZSH_CUSTOM_FILE}"
+  echo "${AUTO_SUGGESTIONS_LINE}" > "${ZSH_CUSTOM_FILE}"
 fi
 
 
