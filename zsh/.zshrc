@@ -71,6 +71,11 @@ if [ -x "$(command -v fzf)" ]; then
   bindkey '^N' fzf-cd-widget
 fi
 
+if [ -x "$(command -v docker)" ]; then
+  alias up='docker compose up'
+  alias down='docker compose down'
+fi
+
 #
 # autocomplete
 #
