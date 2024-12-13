@@ -104,3 +104,4 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=36'
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

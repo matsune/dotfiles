@@ -26,7 +26,6 @@ augroup END
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 depends = ['vim-lsp']
-rev = "v0.0.1"
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
