@@ -28,6 +28,10 @@ if [ -x "$(command -v brew)" ]; then
   eval $(brew shellenv)
 fi
 
+if [ -x "$(command -v mise)" ]; then
+  eval "$(mise activate zsh)"
+fi
+
 #
 # aliases
 #
@@ -66,7 +70,6 @@ if [ -x "$(command -v fzf)" ]; then
   bindkey -s '^F' 'fzf --print0 | xargs -0 -o vim\n'
   bindkey '^N' fzf-cd-widget
 fi
-
 
 #
 # autocomplete
