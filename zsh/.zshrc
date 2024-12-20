@@ -16,6 +16,8 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 PROMPT="%F{cyan}%~:%F{green}%f$ %f"
 
+export EDITOR='vim'
+
 # VCS
 autoload -Uz vcs_info
 precmd () { vcs_info }
