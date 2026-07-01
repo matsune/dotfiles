@@ -10,30 +10,7 @@ SAVEHIST=6000000
 setopt hist_ignore_dups
 setopt share_history
 
-export GREP_OPTIONS='--color=auto' 
-export LC_ALL=en_US.UTF-8
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
-
 PROMPT="%F{cyan}%~:%F{green}%f$ %f"
-
-export EDITOR='vim'
-
-# VCS
-autoload -Uz vcs_info
-precmd () { vcs_info }
-setopt prompt_subst
-zstyle ':vcs_info:*' formats '%F{48}[%b]%f'
-zstyle ':vcs_info:*' actionformats '%F{126}[%b|%a]%f'
-RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
-
-if [ -x "$(command -v brew)" ]; then
-  eval $(brew shellenv)
-fi
-
-if [ -x "$(command -v mise)" ]; then
-  eval "$(mise activate zsh)"
-  eval "$(mise activate --shims)"
-fi
 
 #
 # aliases
@@ -49,10 +26,6 @@ if [ -x "$(command -v lsd)" ]; then
   alias ll='ls -lF'
   alias la='ls -laF'
   alias lt='ls --tree'
-fi
-
-if [ -x "$(command -v rg)" ]; then
-  alias rgf='rg --files | rg'
 fi
 
 if [ -x "$(command -v fzf)" ]; then
@@ -112,7 +85,6 @@ zstyle ':completion:*:manuals' separate-sections true
 #
 source ~/.zsh_custom
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=36'
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
