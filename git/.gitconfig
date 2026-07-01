@@ -16,15 +16,20 @@ puo = push -u origin
 m = merge
 mom = merge origin/main
 mod = merge origin/develop
-s = switch
-sd = switch develop
-sm = switch master
+s = switch --recurse-submodules
+sd = s develop
+sm = s main
 sc = switch -c
 st = status
 r = restore
 c = !echo "deprecated: use switch/restore"
+pr = pull --recurse-submodules
+sp = switch prod
 
 [init]
 defaultBranch = main
 [pull]
 	rebase = false
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
