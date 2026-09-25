@@ -1,23 +1,32 @@
 # dotfiles
 
-My Dev configs for
+Personal dotfiles for macOS, managed with a fish setup script.
 
-- git
-- zsh
-- vim
-- tmux
-- tig
+## Requirements
 
-## Install
+- macOS
+- [Homebrew](https://brew.sh)
+- [fish](https://fishshell.com)
 
-Set `DOTFILES` where to clone this repo (default is `$HOME/dotfiles`)
+## Setup
 
-```sh
-curl -s https://raw.githubusercontent.com/matsune/dotfiles/master/install.sh | DOTFILES=~/dotfiles sh
+```fish
+git clone git@github.com:matsune/dotfiles.git
+cd dotfiles
+./setup.fish
 ```
 
-## Depends
+`setup.fish` offers to install the required Homebrew packages, then symlinks
+the config files in this repository into your home directory.
 
-- [dein.vim](https://github.com/Shougo/dein.vim)
-- [fzf](https://github.com/junegunn/fzf)
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
+It is safe to run more than once. Existing links are left as they are, and if a
+regular file already exists at a target path it is skipped with a warning, so
+nothing is overwritten.
+
+## Machine-specific settings
+
+Settings for a single machine go in these files. They are loaded automatically
+if they exist and are not tracked in this repository.
+
+- fish: `~/.config/fish/config.custom.fish`
+- Vim plugins: `~/.vim/plugins.custom.vim` (`Plug` lines)
