@@ -1,3 +1,5 @@
+set fish_greeting
+
 if type -q brew
     fish_add_path (brew --prefix)/bin
 end
