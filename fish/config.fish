@@ -9,7 +9,7 @@ if test -f "$custom_config"
     source "$custom_config"
 end
 
-bind \cg cproj
+bind \cg 'cproj; and begin; echo; commandline -f repaint; end'
 
 alias v='vim'
 alias t='tig'
