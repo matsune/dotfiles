@@ -13,3 +13,4 @@ bind \cg 'cproj; and begin; echo; commandline -f repaint; end'
 
 alias v='vim'
 alias t='tig'
+alias h='herdr'
