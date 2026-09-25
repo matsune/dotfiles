@@ -94,6 +94,7 @@ function main
         ensure_symlinks_in_dir $fish_src/$dir $fish_dst/$dir
     end
 
+    ensure_symlink $script_dir/ghostty/config.ghostty "$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
     ensure_symlink $script_dir/git/.gitconfig $HOME/.gitconfig
     ensure_symlink $script_dir/git/.gitignore_global $HOME/.gitignore_global
     ensure_symlink $script_dir/tig/.tigrc $HOME/.tigrc

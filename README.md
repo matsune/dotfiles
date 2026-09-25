@@ -8,6 +8,18 @@ Personal dotfiles for macOS, managed with a fish setup script.
 - [Homebrew](https://brew.sh)
 - [fish](https://fishshell.com)
 
+## Recommended terminal
+
+[Ghostty](https://ghostty.org) is recommended. Its config is included in this
+repository, and `setup.fish` links it into
+`~/Library/Application Support/com.mitchellh.ghostty/`. Install it with:
+
+```fish
+brew install --cask ghostty
+```
+
+After changing the config, reload it in Ghostty with `Cmd+Shift+,`.
+
 ## Setup
 
 ```fish
