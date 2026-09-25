@@ -13,7 +13,6 @@ let s:custom_plugins = expand('~/.vim/plugins.custom.vim')
 call plug#begin('~/.vim/plugged')
 
 Plug 'prabirshrestha/vim-lsp', { 'tag': 'v0.1.4' }
-Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim', { 'tag': 'v2.1.0' }
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'hrsh7th/vim-vsnip'

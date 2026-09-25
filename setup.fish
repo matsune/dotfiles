@@ -95,6 +95,7 @@ function main
     end
 
     ensure_symlink $script_dir/ghostty/config.ghostty "$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+    ensure_symlink $script_dir/herdr/config.toml $HOME/.config/herdr/config.toml
     ensure_symlink $script_dir/git/.gitconfig $HOME/.gitconfig
     ensure_symlink $script_dir/git/.gitignore_global $HOME/.gitignore_global
     ensure_symlink $script_dir/tig/.tigrc $HOME/.tigrc
