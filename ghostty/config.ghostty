@@ -8,6 +8,7 @@ window-padding-y = 6
 window-padding-balance = true
 window-save-state = always
 macos-titlebar-style = tabs
+background-opacity = 0.95
 
 # Cursor
 cursor-style = block
@@ -24,8 +25,3 @@ scrollback-limit = 100000000
 # Shell integration
 shell-integration = fish
 shell-integration-features = no-cursor,sudo,title
-
-# Quick terminal (global hotkey requires Accessibility permission)
-keybind = global:cmd+grave_accent=toggle_quick_terminal
-quick-terminal-position = top
-quick-terminal-animation-duration = 0.1
