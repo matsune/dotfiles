@@ -51,10 +51,19 @@ function ensure_symlink
         return 0
     end
 
-    # skip if already exists
+    # ask user whether to override if already exists
     if test -e "$target"; or test -L "$target"
-        echo "Warning: target already exists, skipped: $target" >&2
-        return 0
+        read -P "$target already exists. Override? [y/N] " answer
+
+        switch $answer
+            case y Y yes YES
+                set -l backup "$target.bak."(date +%Y%m%d%H%M%S)
+                mv "$target" "$backup"
+                echo "Backed up: $target -> $backup"
+            case '*'
+                echo "Skipped: $target"
+                return 0
+        end
     end
 
     mkdir -p (dirname "$target")
