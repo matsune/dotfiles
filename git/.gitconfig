@@ -1,6 +1,7 @@
 [core]
 editor = vim
 excludesfile = ~/.gitignore_global
+quotepath = false
 
 [user]
 email = yuma.matsune@gmail.com

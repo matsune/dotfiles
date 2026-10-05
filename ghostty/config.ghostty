@@ -25,3 +25,6 @@ scrollback-limit = 100000000
 # Shell integration
 shell-integration = fish
 shell-integration-features = no-cursor,sudo,title
+
+# Machine-local overrides (optional)
+config-file = ?config.custom.ghostty
